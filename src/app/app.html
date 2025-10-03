@@ -114,7 +114,7 @@
     <div class="modal-content modal-body border-0 p-0">
       <div class="input-group mb-2">
         <input type="text" class="form-control" name="q" placeholder="Search ..." #searchText
-          (keydown.Enter)="filterSearch(searchText.value)">
+          (keydown)="filterSearch(searchText.value)">
         <button class="input-group-text bg-success text-light" (click)="filterSearch(searchText.value)">
           <i class="fa fa-fw fa-search text-white"></i>
         </button>

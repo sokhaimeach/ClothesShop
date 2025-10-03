@@ -31,10 +31,18 @@
 
 
 .category-title {
-    font-size: 18px;
     font-weight: bold !important;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+.p {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+@media (max-width: 576px){
+    .category-title{
+        font-size: 36px !important;
+    }
 }
 
 /* services */
@@ -90,5 +98,21 @@
     .services .col-lg-4, 
     .services .col-lg-8 {
         margin-left: 10px;
+    }
+}
+
+
+/* responsive width */
+.re-service {
+    width: 99vw;
+}
+@media (max-width: 1183px) {
+    .re-service{
+        width: 98vw;
+    }
+}
+@media (max-width: 596px) {
+    .re-service {
+        width: 97vw;
     }
 }

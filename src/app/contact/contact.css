@@ -1,6 +1,25 @@
 .responsive-text {
     font-size: clamp(30px, 36px, 48px) !important;
 }
+.shade:hover .icon-clamp{
+    animation: shade 0.5s ease-in-out forwards;
+}
+
+@keyframes shade {
+    0% {
+        transform: rotate(20deg);
+    }
+    50% {
+        transform: rotate(-20deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.re-box {
+    width: 50%;
+}
 
 @media (max-width: 768px) {
     .contact-container {
@@ -8,14 +27,32 @@
         align-items: center;
         padding: 20px !important;
     }
-
-    .contact-container .col-6 {
-        width: 100% !important;
-        margin-bottom: 20px;
-    }
-
     .map-container {
         padding-left: 20px !important;
         padding-right: 20px !important;
     }
+    .re-box {
+        width: 100%;
+    }
+}
+
+
+/* input */
+.label-text {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: var(--green-color);
+
+}
+form input, textarea {
+    border: 2px solid var(--green-color);
+}
+.talk {
+    border: 2px solid var(--green-color);
+    color: var(--green-color);
+    transition: all 0.3s ease;
+}
+.talk:hover {
+    background-color: var(--green-color);
+    color: white;
 }

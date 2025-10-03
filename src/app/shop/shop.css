@@ -27,3 +27,15 @@
     transform: scale(0.8);
     border: none;
 }
+
+
+.p {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+@media (max-width: 576px){
+    .h1 {
+        font-size: 36px !important;
+    }
+}

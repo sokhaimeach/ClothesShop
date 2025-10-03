@@ -220,10 +220,13 @@
     color: black;
 }
 .category-title {
-    font-size: 18px;
     font-weight: bold !important;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+p {
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 /* Keep your special grid spans for large screens */
@@ -273,6 +276,10 @@
     }
     .hover-effect {
         height: 150px;
+    }
+
+    .category-title {
+        font-size: 36px !important;
     }
 }
 

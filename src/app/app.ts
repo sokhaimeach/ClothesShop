@@ -22,8 +22,8 @@ export class App {
   ];
 
   categories: string[] = [
-    "t-shirt", "shirt", "jeans", "hat", "skirt", 
-    "oversize", "regular", "sport", "bag", "polo", 
+    "t-shirt", "shirt", "jeans", "hat", "skirt",
+    "oversize", "regular", "sport", "bag", "polo",
     "trouser", "shoes", "other"
   ];
 
@@ -36,7 +36,7 @@ export class App {
   cartItems: any[] = [];
   total: number = 0;
   searchList: Clothe[] = [];
-  constructor(public fav: Favorite, public cart: Cart, private data: Clotheservice){}
+  constructor(public fav: Favorite, public cart: Cart, private data: Clotheservice) { }
 
   ngOnInit(): void {
     this.cart.cartItems$.subscribe(items => {
@@ -44,21 +44,23 @@ export class App {
       this.total = this.cart.totalAmount();
     });
   }
+
   payway: number = 0;
-  checkSize(item: any,size: string){
+  checkSize(item: any, size: string) {
     item.size = size;
-    console.log('this is size',item)
   }
+
   message: string = '';
   alert = signal('');
   loading = signal('none');
+
   checkPay() {
     const sizes = (this.cart.displayCartItems()).find((ca: any) => ca.size == '') || {};
-    if(this.payway==0){
+    if (this.payway == 0) {
       this.message = 'Please select method to pay';
-    } else if(sizes.size == ''){
+    } else if (sizes.size == '') {
       this.message = 'Please choose any size';
-    } else{
+    } else {
       this.message = '';
       this.loading.set('flex');
       setTimeout(() => {
@@ -66,14 +68,14 @@ export class App {
         setTimeout(() => {
           this.alert.set('success');
           this.cart.removeAll();
-          setTimeout(() => this.cart.displayCartItems(),100);
-          setTimeout(() => this.alert.set(''),3000);
+          setTimeout(() => this.cart.displayCartItems(), 100);
+          setTimeout(() => this.alert.set(''), 3000);
         }, 100);
-    }, 2000);
+      }, 2000);
     }
   }
 
-  filterSearch(text: string){
+  filterSearch(text: string) {
     if (!text) {
       this.searchList = [];
       return;
