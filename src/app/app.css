@@ -1,0 +1,469 @@
+.nav-shop {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 2000;
+  box-shadow: none !important;
+}
+.navbar-brand {
+  display: flex   ;
+  align-items: center;
+  gap: 10px;
+}
+.navbar-brand span {
+  font-size: 30px;
+  font-weight: 900 !important;
+  color: var(--green-color) !important;
+}
+.logo-img {
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+.logo-img img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: -10px;
+}
+.list-title {
+  font-size: 18px;
+  font-weight: bold !important;
+  text-transform: uppercase;
+  text-decoration: none !important;
+}
+.shop-list {
+    position: relative;
+    display: flex;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+.list {
+    position: absolute;
+    display: none;
+    top: 70px;
+    width: 450px;
+    padding: 20px 20px 20px 0px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    z-index: 10000;
+    background-color: var(--green-color);
+    font-weight: 600;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.445);
+}
+.shop-list:hover i {
+    transition: all 0.3s ease;
+    transform: rotateZ(-180deg);
+    color: var(--green-color);
+}
+.shop-list:hover .list {
+    display: flex;
+}
+.shop-list:hover a {
+    color: var(--green-color) !important;
+}
+.list span {
+    padding-left: 20px;
+}
+.list span:hover {
+    border-left: 3px solid white;
+    color: white;
+}
+.nav-link {
+    cursor: pointer;
+}
+.nav-link.actives {
+    color: var(--green-color) !important;
+}
+.actives .nav-link, .actives i {
+    color: var(--green-color) !important;
+}
+.active {
+    border-left: 3px solid white;
+    color: white;
+}
+.hidden-list {
+    font-size: 25px !important;
+    cursor: pointer;
+    overflow: hidden;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: -5px;
+    display: none !important;
+}
+@media (max-width: 992px) {
+    .hidden-list {
+        display: flex !important;
+    }
+    .nav-icon {
+        margin-top: -5px !important;
+    }
+    .navbar-brand {
+      margin-top: -15px;
+    }
+}
+
+.list-unstyled {
+  list-style: none;
+  transition: all 0.3s ease;
+}
+.list-unstyled li {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.list-unstyled li:hover {
+  color: var(--green-color);
+}
+.active-hidden-list {
+  color: var(--green-color) !important;
+}
+.card-body {
+  transition: all 0.3s ease;
+}
+.collapsea, .hedde-overflow {
+  overflow: hidden;
+}
+.mt--1 {
+  margin-top: -30px !important;
+}
+.hidde-shop-list:hover i {
+  transition: all 0.3s ease;
+  transform: rotateZ(-180deg);
+}
+.menu-title {
+  font-size: 35px !important;
+  font-weight: bold !important;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+
+
+
+
+.size {
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center !important;
+}
+.si {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    border: 1px solid var(--green-color);
+    cursor: pointer;
+}
+.si:hover {
+    background-color: var(--green-color) !important;
+}
+.pay-way {
+    width: fit-content;
+    cursor: pointer;
+}
+.alert {
+    width: 500px;
+    height: 70px;
+    position: fixed;
+    bottom: -100px;
+    left: 20px;
+    z-index: 10000 !important;
+}
+@media (max-width: 576px) {
+    .alert {
+        width: auto !important;
+        right: 20px;
+    }
+}
+.alert.success {
+    animation: alert 3s forwards;
+}
+@keyframes alert {
+    0% {
+        bottom: -100px;
+    }
+    10% {
+        bottom: 20px
+    }
+    90% {
+        bottom: 20px;
+    }
+    100% {
+        bottom: -100px;
+    }
+}
+
+
+
+
+/* From Uiverse.io by Li-Deheng */
+.loader {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  --color: hsl(0, 0%, 87%);
+  --animation: 2s ease-in-out infinite;
+  background-color: rgba(0, 0, 0, 0.67);
+}
+
+.loader .circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: solid 2px var(--color);
+  border-radius: 50%;
+  margin: 0 10px;
+  background-color: transparent;
+  animation: circle-keys var(--animation);
+}
+
+.loader .circle .dot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--color);
+  animation: dot-keys var(--animation);
+}
+
+.loader .circle .outline {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  animation: outline-keys var(--animation);
+}
+
+.circle:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.circle:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.circle:nth-child(4) {
+  animation-delay: 0.9s;
+}
+
+.circle:nth-child(5) {
+  animation-delay: 1.2s;
+}
+
+.circle:nth-child(2) .dot {
+  animation-delay: 0.3s;
+}
+
+.circle:nth-child(3) .dot {
+  animation-delay: 0.6s;
+}
+
+.circle:nth-child(4) .dot {
+  animation-delay: 0.9s;
+}
+
+.circle:nth-child(5) .dot {
+  animation-delay: 1.2s;
+}
+
+.circle:nth-child(1) .outline {
+  animation-delay: 0.9s;
+}
+
+.circle:nth-child(2) .outline {
+  animation-delay: 1.2s;
+}
+
+.circle:nth-child(3) .outline {
+  animation-delay: 1.5s;
+}
+
+.circle:nth-child(4) .outline {
+  animation-delay: 1.8s;
+}
+
+.circle:nth-child(5) .outline {
+  animation-delay: 2.1s;
+}
+
+@keyframes circle-keys {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes dot-keys {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes outline-keys {
+  0% {
+    transform: scale(0);
+    outline: solid 20px var(--color);
+    outline-offset: 0;
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    outline: solid 0 transparent;
+    outline-offset: 20px;
+    opacity: 0;
+  }
+}
+
+
+
+
+/* footer */
+footer a {
+  color: rgba(255, 255, 255, 0.581) !important;
+}
+footer a:hover {
+    color: white !important;
+}
+.white-border {
+    border: 2px solid rgba(255, 255, 255, 0.555) !important;
+}
+
+
+
+/* Make payment options wrap nicely on small screens */
+.pay-way {
+  border: 2px solid white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.pay-way img {
+  max-width: 70px;
+  height: auto;
+}
+
+
+
+
+
+/* Table responsiveness */
+.tbl-price {
+  width: 150px;
+}
+.tbl-size {
+  width: 250px;
+}
+
+.tbl-quantity {
+  width: 150px;
+}
+
+.tbl-remove {
+  width: 50px;
+}
+.product-name {
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+.product-name:hover {
+    color: var(--green-color);
+  }
+
+@media (max-width: 768px) {
+  table.table {
+    font-size: 14px;
+  }
+  table.table th, 
+  table.table td {
+    white-space: nowrap;
+  }
+  .si {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+  .tbl-price {
+    width: 150px !important;
+  }
+  .tbl-product {
+    width: 80px !important;
+  }
+  .product-name {
+    display: none;
+  }
+  .tbl-remove {
+    width: 20px !important;
+  }
+  .tbl-quantity {
+    width: 130px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .tbl-quantity .input-group {
+    display: flex;
+    flex-direction: column;
+    height: 70px !important;
+  }
+  .tbl-quantity .input-group button {
+    width: 100% !important;
+    height: 20px !important;
+    border-radius: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tbl-quantity .input-group span {
+    height: 25px !important;
+    width: 100% !important;
+  }
+}
+
+
+.checkout {
+    border: 2px solid var(--green-color);
+    color: var(--green-color);
+}
+.checkout:hover {
+    background-color: var(--green-color);
+    color: white;
+}

@@ -1,0 +1,144 @@
+<!-- Start Banner -->
+<section class="py-5" style="background-color: var(--white-green-color);">
+    <div class="container-fluid px-5 bannder">
+        <div class="row align-items-start justify-content-between">
+            <div class="col-md-6 text-white">
+                <h1 class="text-color fw-bold">ABOUT US</h1>
+                <p class="text-color">
+                    Welcome to <strong class="fs-2 fw-bold">SH</strong> , your go to destination for stylish clothing for men and women. We offer trendy,
+                    high quality pieces from casual tees and jeans to elegant dresses and accessories—designed to help
+                    you express your style and confidence.
+
+                    At <strong class="fs-2 fw-bold">SH</strong>, fashion meets comfort and quality, making it easy to build a wardrobe you'll love. Shop with
+                    us and wear your story with confidence.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <img src="Img/about_page.png" alt="About Hero" style="width: 100%; object-fit: cover;">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Close Banner -->
+
+<!-- Start Services Section -->
+<section>
+    <div class="row text-center pt-5 pb-3">
+        <div class="col-lg-6 m-auto">
+            <h1 class="h1 category-title" style="color: var(--green-color);">Our Services</h1>
+            <p>
+                At <strong class="fs-2 fw-bold">SH</strong>, enjoy fast delivery, easy returns, exciting promotions, and 24/7 support making your shopping
+                experience effortless and enjoyable.
+            </p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row pb-3">
+            
+            <!-- Delivery -->
+            <div class="row services mb-3 align-items-center">
+                <div class="col-lg-8 img" style="background-color: #c9e9ba;">
+                    <img src="Img/delivery.jpg" alt="">
+                </div>
+                <div class="col-lg-4 ps-4 text-center text-lg-start">
+                    <h1 class="category-title fs-2">Delivery Services</h1>
+                    <p>
+                        At <strong class="fs-2 fw-bold">SH</strong>, we are committed to providing fast and reliable delivery services to ensure you receive your orders on time.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Shipping -->
+            <div class="row services mb-3 align-items-center flex-lg-row-reverse">
+                <div class="col-lg-8 img" style="background-color: #bee3fe;">
+                    <img src="Img/shippings.png" alt="">
+                </div>
+                <div class="col-lg-4 ps-4 text-center text-lg-start">
+                    <h1 class="category-title fs-2">Shipping & Return</h1>
+                    <p>
+                        We offer easy shipping and return options to make your shopping experience hassle-free and convenient.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Promotion -->
+            <div class="row services mb-3 align-items-center">
+                <div class="col-lg-8 img" style="background-color: #c33232;">
+                    <img src="Img/promotion.png" alt="" style="width: 80% !important;">
+                </div>
+                <div class="col-lg-4 ps-4 text-center text-lg-start">
+                    <h1 class="category-title fs-2">Promotion</h1>
+                    <p>
+                        We regularly offer exciting promotions and discounts to provide you with great value on your favorite fashion items.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Support -->
+            <div class="row services mb-3 align-items-center flex-lg-row-reverse">
+                <div class="col-lg-8 img" style="background-color: #729bf5;">
+                    <img src="Img/support.png" alt="">
+                </div>
+                <div class="col-lg-4 ps-4 text-center text-lg-start">
+                    <h1 class="category-title fs-2">24 Hours Service</h1>
+                    <p>
+                        Our dedicated customer support team is available 24/7 to assist you with any inquiries or issues you may have.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- End::Services Section -->
+
+
+<!-- Start Brands -->
+<section class="py-5">
+    <div class="container my-4">
+        <div class="row text-center py-3">
+            <div class="row text-center pt-3">
+                <div class="col-lg-6 m-auto">
+                    <h1 class="h1 category-title"><span style="color: var(--green-color);">Brands</span></h1>
+                    <p>
+                        We cololaborate with top Zando, Ten Eleven and Routine to bring you quality and style.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="carousel slide carousel-multi-item pt-2 pt-md-0" id="multi-item-example"
+                    data-bs-ride="carousel">
+                    <!--Slides-->
+                    <div class="carousel-inner product-links-wap" role="listbox">
+                        <!--First slide-->
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="img-brand" [routerLink]="['/shop', 'Zando']">
+                                        <img class="img-fluid brand-img xando" src="Img/zando_logo.png" alt="Brand Logo"
+                                            style="width: 100% !important;">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="img-brand" [routerLink]="['/shop', 'Ten eleven']">
+                                        <img class="img-fluid brand-img" src="Img/tenEleven_logo.png" alt="Brand Logo"
+                                            style="width: 100% !important;">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="img-brand" [routerLink]="['/shop', 'Routine']">
+                                        <img class="img-fluid brand-img routine" src="Img/routine_logo.png"
+                                            alt="Brand Logo" style="width: 80% !important; object-fit: cover;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End First slide-->
+                    </div>
+                    <!--End Slides-->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Brands-->

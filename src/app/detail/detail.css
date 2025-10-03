@@ -1,0 +1,120 @@
+.carousel-wrapperss {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carouselss {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Controls */
+.prevss,
+.nextss {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.prevss { left: 10px; }
+.nextss { right: 10px; }
+
+
+.size {
+    display: flex;
+    justify-content: space-around;
+    align-items: center !important;
+}
+.si {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    border: 1px solid var(--green-color);
+    cursor: pointer;
+}
+.si:hover {
+    background-color: var(--green-color) !important;
+}
+
+
+
+/* slider wrapper */
+.slider-wrapper {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-wrapper .image-list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc(25% - 5px);
+  gap: 5px;
+  margin-bottom: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  position: relative;
+}
+.slider-wrapper .image-list::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-wrapper .image-list .product-card {
+  background-color: white;
+  padding: 10px;
+  border-radius: 6px;
+}
+.product-card {
+  transition: all 0.4s ease;
+}
+
+/* Slide buttons */
+.slider-wrapper .slide-button {
+  height: 40px;
+  width: 40px;
+  top: 50%;
+  color: #fff;
+  background-color: #6a6a6a;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  position: absolute;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+.slider-wrapper .slide-button#prev-slide { left: 10px; }
+.slider-wrapper .slide-button#next-slide { right: 10px; }
+.slider-wrapper .slide-button:hover { background-color: rgb(23, 3, 3); }
+
+/* Fade animation */
+.fade_fadeIn__NduOo { animation: fadeIn 0.5s ease-in-out; }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 992px) {  /* tablet */
+  .slider-wrapper .image-list {
+    grid-auto-columns: calc(50% - 18px); /* 2 items */
+  }
+}
+@media (max-width: 576px) { /* mobile */
+  .slider-wrapper .image-list {
+    grid-auto-columns: 100%; /* 1 item full width */
+  }
+}

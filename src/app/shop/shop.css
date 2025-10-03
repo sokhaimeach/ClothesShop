@@ -1,0 +1,29 @@
+.head {
+    height: 300px;
+    background-color: var(--white-green-color);
+    text-align: center;
+    display: flex;
+}
+.view-more-div {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 70px;
+}
+.view-more {
+    color: var(--green-color);
+    transition: all 0.1s ease;
+    border: 2px solid var(--green-color);
+    height: 40px;
+}
+.view-more:hover {
+    background-color: var(--green-color);
+    transform: scale(1.1);
+    border: none;
+    color: white;
+}
+.view-more:active {
+    transform: scale(0.8);
+    border: none;
+}

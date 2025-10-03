@@ -1,0 +1,32 @@
+<!-- Start Content -->
+<div class="head w-100">
+    <div class="col-lg-6 m-auto">
+        <h1 class="h1">Welcome to <strong class="fw-bold" style="color: var(--green-color);">SH</strong> shop <span style="color: var(--green-color); font-weight: 600;">{{welcome}}</span></h1>
+        <p>
+            Enjoy your shopping with us. <br> <strong class="fw-bold" style="color: var(--green-color);">SH</strong> shop is best platform for you to shopping with a confident.
+        </p>
+    </div>
+</div>
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="list-inline shop-top-menu pb-3 pt-1">
+                        <li class="list-inline-item">
+                            <div class="h3 text-dark text-decoration-none mr-3">You're in <span class="fw-bold" style="color: var(--green-color);">{{activePage}}</span> page</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- all card -->
+            <app-card class="row" [Items]="clothes"></app-card>
+            <div class="view-more-div">
+                @if(!stopLoad()){
+                    <button class="btn view-more" (click)="LoadMore(copyData())">View more</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Content -->
