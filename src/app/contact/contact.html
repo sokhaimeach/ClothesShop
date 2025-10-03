@@ -42,33 +42,43 @@
 <div class="w-100 mt-5" style="background-color: var(--white-green-color);">
     <div class="container py-5">
         <div class="row py-5">
-            <form class="col-md-9 m-auto" method="post" role="form">
+            <div class="col-md-9 m-auto form">
                 <div class="row">
                     <div class="form-group col-md-6 mb-3">
                         <label class="label-text" for="inputname">Name</label>
-                        <input type="text" class="form-control mt-1" id="name" name="name" placeholder="Name">
+                        <input type="text" class="form-control mt-1" id="name" name="name" placeholder="Name" #name>
                     </div>
                     <div class="form-group col-md-6 mb-3">
                         <label class="label-text" for="inputemail">Email</label>
-                        <input type="email" class="form-control mt-1" id="email" name="email" placeholder="Email">
+                        <input type="text" class="form-control mt-1" name="email" placeholder="Email" #phone>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label class="label-text" for="inputsubject">Subject</label>
-                    <input type="text" class="form-control mt-1" id="subject" name="subject" placeholder="Subject">
+                    <input type="text" class="form-control mt-1" id="subject" name="subject" placeholder="Subject" #subject>
                 </div>
                 <div class="mb-3">
                     <label class="label-text" for="inputmessage">Message</label>
                     <textarea class="form-control mt-1" id="message" name="message" placeholder="Message"
-                        rows="8"></textarea>
+                        rows="8" #message></textarea>
                 </div>
                 <div class="row">
                     <div class="col text-end mt-2">
-                        <button type="submit" class="btn px-3 talk">Let's Talk</button>
+                        <button class="btn px-3 talk" (click)="Message(name.value, phone.value, subject.value, message.value)">Let's Talk</button>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
 <!-- End Contact -->
+
+
+
+<div class="alert alert-success d-flex align-items-center {{alert()}}" role="alert">
+  <i class="bi bi-check-circle-fill me-3"></i>
+  <div>
+    You message have sent, We'll contact you soon! 
+    Note : Make sure your email is true
+  </div>
+</div>

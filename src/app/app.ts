@@ -6,6 +6,7 @@ import { Cart } from './Service/cart';
 import { Clotheservice } from './Data/clotheservice';
 import { Clothe } from './Data/Clothe';
 import { Card } from './card/card';
+import { Telegramservice } from './Service/telegramservice';
 
 @Component({
   selector: 'app-root',
@@ -36,7 +37,10 @@ export class App {
   cartItems: any[] = [];
   total: number = 0;
   searchList: Clothe[] = [];
-  constructor(public fav: Favorite, public cart: Cart, private data: Clotheservice) { }
+  constructor(public fav: Favorite,
+    public cart: Cart,
+    private data: Clotheservice,
+    private telegram: Telegramservice) { }
 
   ngOnInit(): void {
     this.cart.cartItems$.subscribe(items => {
@@ -61,6 +65,7 @@ export class App {
     } else if (sizes.size == '') {
       this.message = 'Please choose any size';
     } else {
+      this.Recipt(this.cart.displayCartItems());
       this.message = '';
       this.loading.set('flex');
       setTimeout(() => {
@@ -81,5 +86,21 @@ export class App {
       return;
     }
     this.searchList = this.data.GetClothes().filter(pro => pro.name.toLowerCase().includes(text.toLowerCase()));
+  }
+
+  Recipt(item: any) {
+    let total = 0;
+    let message = '============== Order =============\n';
+    for(let i = 0; i < item.length; i++){
+      message += '\nName : ' + item[i].name + '\nSize : ' + item[i].size;
+      message += '\nQuantity : ' + item[i].quantity;
+      message += '\nPrice : $ ' + item[i].unitPrice;
+      total += item[i].price;
+      message += '\n-----------------------------------------------------------';
+    }
+    message += '\nTotal Price : $ ' + total;
+    message += '\n=========================';
+
+    this.telegram.sendRecipt(message).subscribe(res => console.log('recipt have sended!'));
   }
 }

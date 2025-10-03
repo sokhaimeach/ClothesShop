@@ -80,11 +80,9 @@
       <a class="nav-icon position-relative text-decoration-none ms-3" style="cursor: pointer;"
         data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-        @if(cart.displayCartItems().length > 0){
         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-danger text-light">
           {{cart.displayCartItems().length}}
         </span>
-        }
       </a>
       <!-- favorites -->
       <a class="nav-icon position-relative text-decoration-none ms-3" style="cursor: pointer;"
@@ -249,7 +247,7 @@
         </span>
         <div class="collapsea" [style.height]="hiddeShop()">
           <div class="card-body" routerLinkActive="active-hidden-list" [routerLinkActiveOptions]="{ exact: false }">
-            <h2 class="list-title" (click)="hiddeGender() == '0px' ? hiddeGender.set('auto') : hiddeGender.set('0px')">Gender</h2>
+            <h2 class="list-title" style="color: black !important;" (click)="hiddeGender() == '0px' ? hiddeGender.set('auto') : hiddeGender.set('0px')">Gender</h2>
             @for(g of genderList; track $index){
             <div class="hedde-overflow" [style.height]="hiddeGender()">
               <a class="text-decoration-none text-dark" [routerLink]="['/shop', g.filter]" routerLinkActive="active-hidden-list">
@@ -259,7 +257,7 @@
             }
           </div>
           <div class="card-body" routerLinkActive="active-hidden-list" [routerLinkActiveOptions]="{ exact: false }">
-            <h2 class="list-title mt--1" (click)="hiddeCategory() == '0px' ? hiddeCategory.set('auto') : hiddeCategory.set('0px')">Categories</h2>
+            <h2 class="list-title mt--1" style="color: black !important;" (click)="hiddeCategory() == '0px' ? hiddeCategory.set('auto') : hiddeCategory.set('0px')">Categories</h2>
             @for(category of categories; track $index){
             <div class="hedde-overflow" [style.height]="hiddeCategory()">
               <a class="text-decoration-none text-dark" [routerLink]="['/shop', category]" routerLinkActive="active-hidden-list">
@@ -269,7 +267,7 @@
             }
           </div>
           <div class="card-body" routerLinkActive="active-hidden-list" [routerLinkActiveOptions]="{ exact: false }">
-            <h2 class="list-title mt--1" (click)="hiddeBrand() == '0px' ? hiddeBrand.set('auto') : hiddeBrand.set('0px')">Brands</h2>
+            <h2 class="list-title mt--1" style="color: black !important;" (click)="hiddeBrand() == '0px' ? hiddeBrand.set('auto') : hiddeBrand.set('0px')">Brands</h2>
             <div class="hedde-overflow" style="display: flex; flex-direction: column;" [style.height]="hiddeBrand()">
               <a class="text-decoration-none text-dark" [routerLink]="['/shop', 'Zando']" routerLinkActive="active-hidden-list">
                 Zando

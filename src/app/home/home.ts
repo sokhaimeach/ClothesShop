@@ -16,18 +16,10 @@ export class Home {
   genderList: Clothe[] = [];
   categoryList: string[] = ['skirt', 'shoes', 'shirt', 'oversize', 'regular', 'hat'];
   categoriesId: number[] = [518, 565, 21, 26, 247, 555];
-  brandList: any[] = [];
   constructor(private service: Clotheservice) {}
   ngOnInit(): void {
     this.filterByCategory();
     this.filterForGender();
-    this.service.GetClothes().map(item => {
-      if(!this.brandList.includes(item.brand)) {
-        this.brandList.push(item.brand);
-      }
-    });
-    console.log(this.brandList);
-    
   }
   filterByCategory(): void {
     let list: any[] = [];
@@ -42,6 +34,4 @@ export class Home {
   filterForGender(){
     this.genderList = (this.service.GetClothes()).filter(c => (c.id === 39 || c.id === 504));
   }
-
-
 }

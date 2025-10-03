@@ -1,5 +1,6 @@
 import { isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, Inject, PLATFORM_ID } from '@angular/core';
+import { AfterViewInit, Component, Inject, PLATFORM_ID, signal } from '@angular/core';
+import { Telegramservice } from '../Service/telegramservice';
 
 @Component({
   selector: 'app-contact',
@@ -10,7 +11,8 @@ import { AfterViewInit, Component, Inject, PLATFORM_ID } from '@angular/core';
 export class Contact implements AfterViewInit {
   private map: any;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
+  alert = signal('');
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private telegram: Telegramservice) { }
 
   async ngAfterViewInit(): Promise<void> {
     if (isPlatformBrowser(this.platformId)) {
@@ -40,5 +42,22 @@ export class Contact implements AfterViewInit {
       this.map.scrollWheelZoom.disable();
       this.map.touchZoom.disable();
     }
+  }
+
+
+
+  // send message 
+  Message(name: string, phone: string, subject: string, message: string) {
+    if((name || phone || subject || message) == undefined) return;
+    let concat = '======== FROM CONTACT ========\n\n';
+    concat += 'Name : ' + name + '\n';
+    concat += 'Email : ' + phone + '\n';
+    concat += 'Subject : ' + subject + '\n';
+    concat += '\nMessage : ' + message;
+
+    this.telegram.sendRecipt(concat).subscribe(res => console.log('successfully'));
+
+    this.alert.set('success');
+    setTimeout(() => this.alert.set(''), 3100);
   }
 }
