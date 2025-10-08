@@ -11,7 +11,7 @@ import { Favorite } from '../Service/favorite';
   selector: 'app-detail',
   imports: [CommonModule, RouterLink],
   templateUrl: './detail.html',
-  styleUrl: './detail.css'
+  styleUrl: './detail.css',
 })
 export class Detail {
   private activeRoute = inject(ActivatedRoute);
@@ -23,7 +23,7 @@ export class Detail {
   relateProdcut: Clothe[] = [];
   stars: number[] = [1, 2, 3, 4, 5];
   mainImage: string = '';
-  
+
   cartItem: any;
   size: string = '';
   quantity: number = 1;
@@ -31,25 +31,33 @@ export class Detail {
   slide = signal(0);
 
   ngOnInit(): void {
-  this.activeRoute.paramMap.subscribe(params => {
-    const id = Number(params.get('id'));
-    this.detail = (this.service.GetClothes()).find(clothe => clothe.id == id);
-    this.mainImage = this.detail.imageUrl[0];
+    this.activeRoute.paramMap.subscribe((params) => {
+      const id = Number(params.get('id'));
+      this.detail = this.service.GetClothes().find((clothe) => clothe.id == id);
+      this.mainImage = this.detail.imageUrl[0];
 
-    // Subscribe to cart updates
-    this.cart.cartItems$.subscribe(items => {
-      this.cartItem = items.find((i: any) => i.id == id) || { ...this.detail, size: '', quantity: 1 };
-      this.size = this.cartItem.size;
-      this.quantity = this.cartItem.quantity;
+      // Subscribe to cart updates
+      this.cart.cartItems$.subscribe((items) => {
+        this.cartItem = items.find((i: any) => i.id == id) || {
+          ...this.detail,
+          size: '',
+          quantity: 1,
+        };
+        this.size = this.cartItem.size;
+        this.quantity = this.cartItem.quantity;
+      });
+
+      this.Related();
     });
-
-    this.Related();
-  });
-}
+  }
 
   Related() {
-    this.relateProdcut = (this.service.GetClothes())
-      .filter(clothe => (clothe.category == this.detail.category && clothe.id != this.detail.id));
+    this.relateProdcut = this.service
+      .GetClothes()
+      .filter(
+        (clothe) =>
+          clothe.category == this.detail.category && clothe.id != this.detail.id
+      );
   }
 
   moveSlide(step: number) {
@@ -62,15 +70,15 @@ export class Detail {
   currentIndex = 0;
 
   AddToCart() {
-  const item = { ...this.cartItem, size: this.size, quantity: this.quantity };
-  this.cart.AddToCartDetail(item); // 🔥 updates both pages
-}
+    const item = { ...this.cartItem, size: this.size, quantity: this.quantity };
+    this.cart.AddToCartDetail(item); // 🔥 updates both pages
+  }
 
-decreas() {
-  this.quantity = Math.max(1, this.quantity - 1);
-}
+  decreas() {
+    this.quantity = Math.max(1, this.quantity - 1);
+  }
 
-toggleFavorite(event: Event, car: any) {
+  toggleFavorite(event: Event, car: any) {
     const heart = event.target as HTMLElement;
     if (heart.classList.contains('bi-heart')) {
       heart.classList.add('text-danger');
@@ -81,6 +89,9 @@ toggleFavorite(event: Event, car: any) {
       heart.classList.remove('bi-heart-fill');
       heart.classList.add('bi-heart');
     }
-    this.fav.addToFavorites(car, heart.classList.contains('bi-heart-fill') ? 'add' : 'remove');
+    this.fav.addToFavorites(
+      car,
+      heart.classList.contains('bi-heart-fill') ? 'add' : 'remove'
+    );
   }
 }

@@ -118,3 +118,17 @@
     grid-auto-columns: 100%; /* 1 item full width */
   }
 }
+
+
+
+.fav-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--green-color);
+  color: var(--green-color);
+}
+.fav-btn:hover {
+  background-color: var(--green-color);
+  color: white;
+}
